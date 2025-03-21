@@ -1,4 +1,4 @@
-class food:
+class food: #РїРѕС‡РµРјСѓ РЅРµ utf8(
     def __init__(self, name: str):
         self.name = name
 
@@ -11,21 +11,21 @@ class base:
         self.items = []
     def add_item(self, item: food):
         self.items.append(item)
-        print(f"{item.name} добавлен в холодильник.")
+        print(f"{item.name} Г¤Г®ГЎГ ГўГ«ГҐГ­ Гў ГµГ®Г«Г®Г¤ГЁГ«ГјГ­ГЁГЄ.")
 
     def remove_item(self, name: str):
         for item in self.items:
             if item.name.lower() == name.lower():
                 self.items.remove(item)
-                print(f"{name} убран из холодильника.")
+                print(f"{name} ГіГЎГ°Г Г­ ГЁГ§ ГµГ®Г«Г®Г¤ГЁГ«ГјГ­ГЁГЄГ .")
                 return
-        print(f"{name} такого нет!")
+        print(f"{name} ГІГ ГЄГ®ГЈГ® Г­ГҐГІ!")
 
     def show_items(self):
         if not self.items:
-            print("холодильник пуст.")
+            print("ГµГ®Г«Г®Г¤ГЁГ«ГјГ­ГЁГЄ ГЇГіГ±ГІ.")
         else:
-            print("Внутри лнжит:")
+            print("Г‚Г­ГіГІГ°ГЁ Г«Г­Г¦ГЁГІ:")
             for item in self.items:
                 print(f"- {item}")
 
@@ -35,25 +35,25 @@ if __name__ == "__main__":
     fridge = base()
 
     while True:
-        print("\nвыберите действие:")
-        print("1. добавить продукт")
-        print("2. удалить продукт")
-        print("3. показать что внутри")
+        print("\nГўГ»ГЎГҐГ°ГЁГІГҐ Г¤ГҐГ©Г±ГІГўГЁГҐ:")
+        print("1. Г¤Г®ГЎГ ГўГЁГІГј ГЇГ°Г®Г¤ГіГЄГІ")
+        print("2. ГіГ¤Г Г«ГЁГІГј ГЇГ°Г®Г¤ГіГЄГІ")
+        print("3. ГЇГ®ГЄГ Г§Г ГІГј Г·ГІГ® ГўГ­ГіГІГ°ГЁ")
         print("4. game over")
 
-        choice = input("введите номер: ")
+        choice = input("ГўГўГҐГ¤ГЁГІГҐ Г­Г®Г¬ГҐГ°: ")
 
         if choice == "1":
-            name = input("введите название продукта: ")
+            name = input("ГўГўГҐГ¤ГЁГІГҐ Г­Г Г§ГўГ Г­ГЁГҐ ГЇГ°Г®Г¤ГіГЄГІГ : ")
             fridge.add_item(food(name))
         elif choice == "2":
-            name = input("введите название продукта для удаления: ")
+            name = input("ГўГўГҐГ¤ГЁГІГҐ Г­Г Г§ГўГ Г­ГЁГҐ ГЇГ°Г®Г¤ГіГЄГІГ  Г¤Г«Гї ГіГ¤Г Г«ГҐГ­ГЁГї: ")
             fridge.remove_item(name)
         elif choice == "3":
             fridge.show_items()
         elif choice == "4":
-            print("больше нет холодильника.")
+            print("ГЎГ®Г«ГјГёГҐ Г­ГҐГІ ГµГ®Г«Г®Г¤ГЁГ«ГјГ­ГЁГЄГ .")
             break
         else:
-            print("куда жмешь?)")
+            print("ГЄГіГ¤Г  Г¦Г¬ГҐГёГј?)")
             
