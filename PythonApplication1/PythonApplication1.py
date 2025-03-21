@@ -1,4 +1,4 @@
-class food: #почему не utf8(
+class food:
     def __init__(self, name: str):
         self.name = name
 
@@ -11,21 +11,21 @@ class base:
         self.items = []
     def add_item(self, item: food):
         self.items.append(item)
-        print(f"{item.name} äîáàâëåí â õîëîäèëüíèê.")
+        print(f"{item.name} добавлен в холодильник.")
 
     def remove_item(self, name: str):
         for item in self.items:
             if item.name.lower() == name.lower():
                 self.items.remove(item)
-                print(f"{name} óáðàí èç õîëîäèëüíèêà.")
+                print(f"{name} убран из холодильника.")
                 return
-        print(f"{name} òàêîãî íåò!")
+        print(f"{name} такого нет!")
 
     def show_items(self):
         if not self.items:
-            print("õîëîäèëüíèê ïóñò.")
+            print("холодильник пуст.")
         else:
-            print("Âíóòðè ëíæèò:")
+            print("Внутри лнжит:")
             for item in self.items:
                 print(f"- {item}")
 
@@ -35,25 +35,25 @@ if __name__ == "__main__":
     fridge = base()
 
     while True:
-        print("\nâûáåðèòå äåéñòâèå:")
-        print("1. äîáàâèòü ïðîäóêò")
-        print("2. óäàëèòü ïðîäóêò")
-        print("3. ïîêàçàòü ÷òî âíóòðè")
+        print("\nвыберите действие:")
+        print("1. добавить продукт")
+        print("2. удалить продукт")
+        print("3. показать что внутри")
         print("4. game over")
 
-        choice = input("ââåäèòå íîìåð: ")
+        choice = input("введите номер: ")
 
         if choice == "1":
-            name = input("ââåäèòå íàçâàíèå ïðîäóêòà: ")
+            name = input("введите название продукта: ")
             fridge.add_item(food(name))
         elif choice == "2":
-            name = input("ââåäèòå íàçâàíèå ïðîäóêòà äëÿ óäàëåíèÿ: ")
+            name = input("введите название продукта для удаления: ")
             fridge.remove_item(name)
         elif choice == "3":
             fridge.show_items()
         elif choice == "4":
-            print("áîëüøå íåò õîëîäèëüíèêà.")
+            print("больше нет холодильника.")
             break
         else:
-            print("êóäà æìåøü?)")
+            print("куда жмешь?)")
             
